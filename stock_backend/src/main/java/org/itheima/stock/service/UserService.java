@@ -6,6 +6,8 @@ import org.itheima.stock.vo.req.LoginReqVo;
 import org.itheima.stock.vo.resp.LoginRespVo;
 import org.itheima.stock.vo.resp.R;
 
+import java.util.Map;
+
 // 定义用户服务接口
 public interface UserService {
     /**
@@ -21,4 +23,10 @@ public interface UserService {
      * @return
      */
     R<LoginRespVo> login(LoginReqVo vo);
+
+    /**
+     * 生成图片验证码功能
+     * @return
+     */
+    R<Map> getCaptchaCode();
 }

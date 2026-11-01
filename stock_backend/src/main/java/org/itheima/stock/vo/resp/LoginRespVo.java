@@ -2,6 +2,8 @@ package org.itheima.stock.vo.resp;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,24 +18,29 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@ApiModel(description = "登录响应数据封装")
 public class LoginRespVo {
     /**
      * 用户ID
      * 将Long类型数字进行json格式转化时，转成String格式类型
      */
+    @ApiModelProperty(value = "主键ID")
     @JsonSerialize(using = ToStringSerializer.class)
     private Long id;
     /**
      * 电话
      */
+    @ApiModelProperty(value = "用户手机号")
     private String phone;
     /**
      * 用户名
      */
+    @ApiModelProperty(value = "用户名")
     private String username;
     /**
      * 昵称
      */
+    @ApiModelProperty(value = "用户昵称")
     private String nickName;
 
 }
